@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/userbase-react/static/css/main.5c2e51b6.css",
+    "main.js": "/userbase-react/static/js/main.2611ae59.js",
+    "static/media/gothamprobold.ttf": "/userbase-react/static/media/gothamprobold.764ba13de4409a990823.ttf",
+    "static/media/gothampro_medium.ttf": "/userbase-react/static/media/gothampro_medium.dca4b95d345c2abd8661.ttf",
+    "static/media/gothampro.ttf": "/userbase-react/static/media/gothampro.4f71921a0823129cd8ba.ttf",
+    "index.html": "/userbase-react/index.html",
+    "main.5c2e51b6.css.map": "/userbase-react/static/css/main.5c2e51b6.css.map",
+    "main.2611ae59.js.map": "/userbase-react/static/js/main.2611ae59.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5c2e51b6.css",
+    "static/js/main.2611ae59.js"
+  ]
+}
