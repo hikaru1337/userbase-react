@@ -1,70 +1,29 @@
-# Getting Started with Create React App
+# Userbase-react
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Проект создан для практики работы с React.js и tailwindcss. Суть в добавлении, и хранении  данных, пока страница не будет обновлена. Ниже представлена краткая информация о функционале сайта.
 
-## Available Scripts
+## 1. Добавление пользователя 
 
-In the project directory, you can run:
+  - **Фамилия**
+  - **Имя**
+  - **Дата рождения**
+  - **Профессия**
+  - **О себе**
+<!-- <img align="right" src="https://github.com/hikaru1337/userbase-react/assets/56882712/9d62281b-28bb-4582-bc12-2584efbb5c16" width="250"> -->
 
-### `npm start`
+## 2. Визуализация добавленных данных
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Блок справа отображает пример того, как введенные вами данные будут представлены в списке пользователей. Здесь вы увидите визуализацию имени, фамилии, фотографии, описания, профессии и даты рождения.\
+<img src="https://github.com/hikaru1337/userbase-react/assets/56882712/2727e3c3-5f11-45cf-9d7d-66b0f89c2d7f" width="350">
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 3. Список пользователей
 
-### `npm test`
+Здесь представлены добавленные пользователями данные. Каждый пользователь отображается в отдельном блоке, аналогичном блоку визуализации. Вы можете нажать на любого пользователя, чтобы открыть модальное окно и подробнее ознакомиться с его профилем.
+<img src="https://github.com/hikaru1337/userbase-react/assets/56882712/a26718ee-96a7-4e6c-999a-9a9be10d174a" width="350">
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Модальное окно пользователя
 
-### `npm run build`
+При нажатии на пользователя открывается модальное окно, где вы можете более подробно изучить профиль. Здесь отображаются все введенные данные, включая фотографию, описание и дату рождения.
+<img src="https://github.com/hikaru1337/userbase-react/assets/56882712/f3aa969c-80e1-4494-a3b9-3f05663801c4" width="550">
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Спасибо за внимание, проект полностью ваш :)
