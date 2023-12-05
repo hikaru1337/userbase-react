@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/userbase-react/static/css/main.18d1069e.css",
-    "main.js": "/userbase-react/static/js/main.9cc7a524.js",
+    "main.css": "/userbase-react/static/css/main.e6e63059.css",
+    "main.js": "/userbase-react/static/js/main.0e802192.js",
     "static/media/gothamprobold.ttf": "/userbase-react/static/media/gothamprobold.764ba13de4409a990823.ttf",
     "static/media/gothampro_medium.ttf": "/userbase-react/static/media/gothampro_medium.dca4b95d345c2abd8661.ttf",
     "static/media/gothampro.ttf": "/userbase-react/static/media/gothampro.4f71921a0823129cd8ba.ttf",
     "index.html": "/userbase-react/index.html",
-    "main.18d1069e.css.map": "/userbase-react/static/css/main.18d1069e.css.map",
-    "main.9cc7a524.js.map": "/userbase-react/static/js/main.9cc7a524.js.map"
+    "main.e6e63059.css.map": "/userbase-react/static/css/main.e6e63059.css.map",
+    "main.0e802192.js.map": "/userbase-react/static/js/main.0e802192.js.map"
   },
   "entrypoints": [
-    "static/css/main.18d1069e.css",
-    "static/js/main.9cc7a524.js"
+    "static/css/main.e6e63059.css",
+    "static/js/main.0e802192.js"
   ]
 }
