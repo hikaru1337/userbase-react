@@ -1,101 +1,101 @@
 import "./App.css";
 import UserList from "./components/UI/UserList/UserList";
+import UserModal from "./components/UI/UserModal/UserModal";
 import InputUser from "./components/input/InputUser";
 import ViewUser from "./components/input/ViewUser";
+import { dateConverter } from "./components/service/DateConvert";
 import { useState } from "react";
 
+const items = [
+  {
+    id: 0,
+    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/2048px-Default_pfp.svg.png",
+    firstName: "Икс",
+    secondName: "Пососу",
+    birthDate: "2001-05-05",
+    profession: "Программист",
+    aboutMe: "Я React и C# разработчик. Изучаю TailWindcss, в будущем хочу изучать Next.js и Nest.js",
+  },
+  {
+    id: 1,
+    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/2048px-Default_pfp.svg.png",
+    firstName: "Икс",
+    secondName: "Пососу",
+    birthDate: "2001-05-05",
+    profession: "Программист",
+    aboutMe: "Я React и C# разработчик. Изучаю TailWindcss, в будущем хочу изучать Next.js и Nest.js",
+  },
+  {
+    id: 2,
+    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/2048px-Default_pfp.svg.png",
+    firstName: "Икс",
+    secondName: "Пососу",
+    birthDate: "2001-05-05",
+    profession: "Программист",
+    aboutMe: "Я React и C# разработчик. Изучаю TailWindcss, в будущем хочу изучать Next.js и Nest.js",
+  },
+];
+
+const defaultUser = {
+  id: 0,
+  photo: "",
+  firstName: "",
+  secondName: "",
+  birthDate: dateConverter(new Date()),
+  profession: "",
+  aboutMe: "",
+};
+
 function App() {
+  const [user, setUser] = useState(defaultUser);
+  const [userList, setUserList] = useState(items);
+  const [openModal, setOpenModal] = useState(null);
 
-  const userList = [
-    {
-      id: 0,
-      Photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/2048px-Default_pfp.svg.png",
-      FirstName: "Икс",
-      SecondName: "Пососу",
-      Born: "2001-05-05",
-      Profession: "Программист",
-      AboutMe: "Я React и C# разработчик. Изучаю TailWindcss, в будущем хочу изучать Next.js и Nest.js"
-    },
-    {
-      id: 1,
-      Photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/2048px-Default_pfp.svg.png",
-      FirstName: "Икс",
-      SecondName: "Пососу",
-      Born: "2001-05-05",
-      Profession: "Программист",
-      AboutMe: "Я React и C# разработчик. Изучаю TailWindcss, в будущем хочу изучать Next.js и Nest.js"
-    },
-    {
-      id: 2,
-      Photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/2048px-Default_pfp.svg.png",
-      FirstName: "Икс",
-      SecondName: "Пососу",
-      Born: "2001-05-05",
-      Profession: "Программист",
-      AboutMe: "Я React и C# разработчик. Изучаю TailWindcss, в будущем хочу изучать Next.js и Nest.js"
-    },
-  ]
-
-  const [item, setItem] = useState(userList)
-
-  const UserAddHandler = (e) => {
+  const UserAddHandler = () => {
     const newItem = {
-      id: item.length,
-      Photo: photo,
-      FirstName:firstName,
-      SecondName:secondName,
-      Born:birthDate,
-      Profession:profession,
-      AboutMe:aboutMe
-    }
+      id: userList.length,
+      photo: user.photo,
+      firstName: user.firstName,
+      secondName: user.secondName,
+      birthDate: user.birthDate,
+      profession: user.profession,
+      aboutMe: user.aboutMe,
+    };
 
-    setItem(prev => [newItem, ...prev])
-    setPhoto(null);
-    setFirstName(null);
-    setSecondName(null);
-    setBirthDate(null);
-    setProfession(null);
-    setAboutMe(null);
-  }
+    setUserList((prev) => [newItem, ...prev]);
+    setUser(defaultUser);
+  };
 
+  const onOpenModalUserHandler = (id) => {
+    const GetModalUser = userList.find((x) => x.id === id);
+    setOpenModal(GetModalUser);
+  };
 
-  const [photo, setPhoto] = useState(null);
-
-  const [firstName, setFirstName] = useState(null);
-  const [secondName, setSecondName] = useState(null);
-  const [birthDate, setBirthDate] = useState(null);
-  const [profession, setProfession] = useState(null);
-  const [aboutMe, setAboutMe] = useState(null);
+  const updateUserInfo = (field, value) => {
+    setUser((prevUser) => ({
+      ...prevUser,
+      [field]: value,
+    }));
+  };
 
   return (
-    <div className="w-[730px] m-auto ">
+    <>
+      {openModal && <UserModal openModal={openModal} setOpenModal={setOpenModal} />}
+
+    <div className="w-[730px] m-auto overflow-hidden">
       <p className="text-4xl py-5 text-stone-800 font-gothamprobold">
         Userbase
       </p>
       <div className="flex justify-evenly mb-10">
-        <InputUser
-          ImportPhotoHandler={setPhoto}
-          InputFirstNameHandler={setFirstName}
-          InputSecondNameHandler={setSecondName}
-          InputBirthDateHandler={setBirthDate}
-          InputProfessionHandler={setProfession}
-          InputAboutMeHandler={setAboutMe}
-          UserAddHandler={UserAddHandler}
-        />
-        <ViewUser
-          photo={photo}
-          firstName={firstName}
-          secondName={secondName}
-          birthDate={birthDate}
-          profession={profession}
-          aboutMe={aboutMe}
-        />
+        <InputUser InputUserUpdate={updateUserInfo} user={user} UserAddHandler={UserAddHandler}/>
+        <ViewUser user={user}/>
       </div>
 
       <div className="flex flex-wrap justify-between mb-10">
-        <UserList item={item}/>
+        <UserList userList={userList} onOpenModalUserHandler={onOpenModalUserHandler} />
       </div>
     </div>
+  </>
   );
 }
 

@@ -5,22 +5,36 @@ import UserCardPhoto from "./UserCardPhoto";
 import UserCardProfession from "./UserCardProfession";
 
 const UserCard = (props) => {
+
+  const onOpenModalUserHandler = () => {
+    if(props?.staticMode !== true)
+      props.onOpenModalUserHandler(props.user.id)
+  }
+
   return (
-    <div className={`bg-white rounded-xl p-3 w-[350px] h-min ${props.staticMode || `hover:cursor-pointer h-[201px]`}`}>
+    <div className={props.className}>
+      <div onClick={onOpenModalUserHandler} className={`bg-white rounded-xl p-3 w-[350px] h-min ${props.staticMode || `hover:cursor-pointer h-[201px]`}`}>
         <div className="flex flex-col gap-y-3">
           <div className="flex gap-x-3 font-gothampromedium overflow-hidden">
-            <UserCardPhoto photo={props.photo}/>
+            <UserCardPhoto photo={props.user.photo} />
             <div className="flex flex-col justify-between text-stone-700">
               <div>
-                <UserCardName firstName={props.firstName} secondName={props.secondName}/>
-                <UserCardBirthDate birthDate={props.birthDate}/>
+                <UserCardName
+                  firstName={props.user.firstName}
+                  secondName={props.user.secondName}
+                />
+                <UserCardBirthDate birthDate={props.user.birthDate} staticMode={props.staticMode} />
               </div>
-              <UserCardProfession profession={props.profession}/>
+              <UserCardProfession profession={props.user.profession} />
             </div>
           </div>
-          <UserCardAboutMe aboutMe={props.aboutMe} staticMode={props.staticMode}/>
+          <UserCardAboutMe
+            aboutMe={props.user.aboutMe}
+            staticMode={props.staticMode}
+          />
         </div>
       </div>
+    </div>
   );
 };
 

@@ -1,21 +1,14 @@
-const UserCardName = (props) => {
-  let firstName = props.firstName?.trim();
-  let secondName = props.secondName?.trim();
+const UserCardName = ({ firstName, secondName }) => {
+  const trimmedFirstName = firstName?.trim();
+  const trimmedSecondName = secondName?.trim();
+  const success = !(trimmedFirstName || trimmedSecondName);
 
-
-  if(firstName == undefined)
-    firstName = "";
-
-  if(secondName == undefined)
-  secondName = "";
-    
   return (
-    <div className="">
-      <p className={`text-3xl mb-[2px] leading-none ${(firstName === "" && secondName === "") ? `bg-stone-200 rounded-xl w-[200px] h-[35px]` : ` `}`}>
-      {firstName} {secondName}
-    </p>
+    <div>
+      <p className={`text-3xl mb-[2px] leading-none ${success ? `bg-stone-200 rounded-xl w-[200px] h-[35px]` : ''}`}>
+        {trimmedFirstName} {trimmedSecondName}
+      </p>
     </div>
-    
   );
 };
 
